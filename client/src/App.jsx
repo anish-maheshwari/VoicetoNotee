@@ -3,15 +3,15 @@
 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage,{action as HomeAction,loader as HomeLoader} from "./pages/HomePage";
-import EditPage, { loader as EditLoader } from "./pages/EditPage";
-import ViewPage ,{loader as ViewLoader} from "./pages/ViewPage"
-import RegisterPage,{action as registerAction} from "./pages/Register";
-import LoginPage,{action as loginAction}  from "./pages/Login";
-import ErrorPage from "./pages/ErrorPage";
-import FirstPage from "./pages/FirstPage";
-import TestPage from "./pages/TestPage";
-import ManageChildren,{loader as ManageLoader} from "./pages/ManageChildren";
+import HomePage,{action as HomeAction,loader as HomeLoader} from "./Pages/HomePage";
+import EditPage, { loader as EditLoader } from "./Pages/EditPage";
+import ViewPage ,{loader as ViewLoader} from "./Pages/ViewPage"
+import RegisterPage,{action as registerAction} from "./Pages/Register";
+import LoginPage,{action as loginAction}  from "./Pages/Login";
+import ErrorPage from "./Pages/ErrorPage";
+import FirstPage from "./Pages/FirstPage";
+import TestPage from "./Pages/TestPage";
+import ManageChildren,{loader as ManageLoader} from "./Pages/ManageChildren";
 // In your index.js or App.js file
 import axios from 'axios';
 
