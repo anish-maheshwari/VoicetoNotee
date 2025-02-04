@@ -13,6 +13,7 @@ import { authenticateUser } from "./middleware/authMiddleware.js";
 import noteRoutes from './router/notesRoutes.js';
 import User2 from './models/userModels.js'
 import { StatusCodes } from "http-status-codes";
+import path from 'path';
 
 
 
@@ -30,8 +31,8 @@ const app = express();
 
 if(process.env.NODE_ENV=='development'){
     app.use(morgan('dev'));}
-    
-    app.use(cookieParser());
+    app.use(express.static(path.resolve('public')));
+        app.use(cookieParser());
     app.use(express.json());
 
   
