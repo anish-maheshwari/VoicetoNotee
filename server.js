@@ -64,10 +64,9 @@ app.use('/api/v1/current-user',authenticateUser,userRouter);
 
 app.get('/api/v1/users/admin/app-stats',authenticateUser, (req, res) => {
   // Print the value of the 'adminToken' cookie
-  const adminToken = req.cookies.token;
+  const adminToken = req.user;
 
   // Log the value of the cookie
-  console.log('adminToken:', adminToken);
 
   // Send response
   res.status(200).json({adminToken});

@@ -3,7 +3,7 @@ import { verifyJWT } from "../utills/tokenUtils.js"; // Assumes you have a utili
 import { BadRequestError } from '../errors/customError.js';
 
 export const authenticateUser = async (req, res, next) => {
-  console.log(req);
+ 
   const { token } = req.cookies;  // Extract token from cookies
 
   // Check if the token exists

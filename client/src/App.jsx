@@ -111,7 +111,7 @@ const router = createBrowserRouter([
     loader : ManageLoader,
     children: [
       {
-        index: true,
+        index: false,
         element: <HomePage />,
       
       },
