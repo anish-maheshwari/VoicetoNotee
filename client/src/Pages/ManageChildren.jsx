@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import { customFetch } from "../Utills/customFetch";
 import Cookies  from "js-cookie";
 import axios from 'axios';
+import { createContext } from 'react';
 
 // export const loader = async () => {
 //   const { data } = await axios.get('http://localhost:5100/api/v1/users/admin/app-stats', {
@@ -37,5 +38,5 @@ console.log("frontend",data);
   );
 };
 
-
+export const useDashboardContext = ()=> useContext(DasboardContext);
 export default ManageChildren;

@@ -69,7 +69,7 @@
 
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage,{action as HomeAction,loader as HomeLoader} from "./pages/HomePage";
 import EditPage, { action as updateNote } from "./pages/EditPage";
 import RegisterPage,{action as registerAction} from "./pages/Register";
 import LoginPage,{action as loginAction}  from "./pages/Login";
@@ -111,8 +111,10 @@ const router = createBrowserRouter([
     loader : ManageLoader,
     children: [
       {
-        index: false,
+        index: true,
         element: <HomePage />,
+        loader: HomeLoader,
+        action: HomeAction,
       
       },
       {
