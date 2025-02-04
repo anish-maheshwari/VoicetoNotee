@@ -27,7 +27,7 @@ const DasboardContext = createContext();
 
 const ManageChildren = () => {
   const data = useLoaderData();
-console.log("frontend",data);
+
   return (
     < DasboardContext.Provider value={{data}}>{
     <div>

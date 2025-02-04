@@ -1,11 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useNavigate} from 'react-router-dom';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'MarketResearch', href: '/marketResearch' },
-  { name: 'StrategyReport', href: '/strategyReport' },
+  { name: 'Dashboard', href: '/dashboard' },
+
 ];
 
 function classNames(...classes) {
@@ -13,6 +14,13 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+const navigate = useNavigate();
+
+  const logOutUser = async () => {
+    navigate('/');
+    await customFetch.get('/auth/logout');
+    toast.success('Logging out...');
+  };
   // Get the current location (path)
   const location = useLocation();
 
@@ -91,7 +99,11 @@ export default function Navbar() {
                 </MenuItem>
                 <MenuItem>
                   <a
-                    href="#"
+                     href="/"
+                     onClick={(e) => {
+                       e.preventDefault(); // Prevents the default anchor behavior (page reload)
+                       logOutUser(); // Calls the logOutUser function
+                     }}
                     className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
                   >
                     Sign out
