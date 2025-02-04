@@ -35,7 +35,7 @@ export const singleNote = async (req, res) => {
     const { id } = req.params;
     const removedNote = await Note.findByIdAndDelete(id);
   
-    res.status(200).json({ job: removedJob });
+    res.status(200).json({ note: removedNote });
   };
 
   

@@ -70,7 +70,8 @@
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage,{action as HomeAction,loader as HomeLoader} from "./pages/HomePage";
-import EditPage, { action as updateNote } from "./pages/EditPage";
+import EditPage, { loader as EditLoader } from "./pages/EditPage";
+import ViewPage ,{loader as ViewLoader} from "./pages/ViewPage"
 import RegisterPage,{action as registerAction} from "./pages/Register";
 import LoginPage,{action as loginAction}  from "./pages/Login";
 import ErrorPage from "./pages/ErrorPage";
@@ -120,8 +121,13 @@ const router = createBrowserRouter([
       {
         path: "edit/:id",
         element: <EditPage />,
-        action: updateNote, // 🔹 Action for updating a note
+        loader: EditLoader , // 🔹 Action for updating a note
       },
+      {
+        path : "view/:id",
+        element : <ViewPage/>,
+        loader : ViewLoader,
+      }
     ],
   },
   {

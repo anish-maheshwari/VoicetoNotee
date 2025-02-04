@@ -1,6 +1,7 @@
 import { body, validationResult ,param } from 'express-validator';
 import { BadRequestError,NotFoundError } from '../errors/customError.js';
 import User2 from '../models/userModels.js';
+import Note from '../models/noteModels.js';
 
 
 
@@ -98,7 +99,7 @@ export const validateNoteInput = withValidationErrors([
       const isValidMongoId = mongoose.Types.ObjectId.isValid(value);
       if (!isValidMongoId) throw new BadRequestError('invalid MongoDB id');
       const note = await Note.findById(value);
-      if (!job) throw new NotFoundError(`no notes with id ${value}`);
+      if (!note) throw new NotFoundError(`no notes with id ${value}`);
      
     
     }),

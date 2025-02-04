@@ -23,6 +23,6 @@ createdBy: {
 
 { timestamps: true });
 
-const Note = mongoose.model("Note", noteSchema);
+export default mongoose.model("Note", noteSchema);
 
-export default Note;
+
