@@ -6,12 +6,6 @@ import Cookies  from "js-cookie";
 import axios from 'axios';
 import { createContext } from 'react';
 
-// export const loader = async () => {
-//   const { data } = await axios.get('http://localhost:5100/api/v1/users/admin/app-stats', {
-//     withCredentials: true,  // Allow sending cookies with the request
-//   });
-//   return data;
-// };
 
 
 export const loader = async () => {
